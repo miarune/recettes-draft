@@ -21,6 +21,8 @@
     max-width: 600px;
     max-height: 90vh;
     overflow-y: auto;
+      scrollbar-width: none;
+
 }
 
 .modal-content h2 {
@@ -46,16 +48,29 @@
     margin-bottom: 8px;
 }
 
-.form-group input,
 .form-group select,
 .form-group textarea {
-    width: 100%;
+    width: 95%;
     padding: 12px;
     border: 2px solid #eee1c8;
     border-radius: 8px;
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
 }
+
+.form-group input{
+    width: 90%;
+    padding: 12px;
+    border: 2px solid #eee1c8;
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#titleInput{
+    width: 95%;
+}
+
 
 .form-group input:focus,
 .form-group select:focus,
@@ -120,6 +135,10 @@
     height: 24px;
     cursor: pointer;
     font-size: 16px;
+}
+
+#imageInput {
+    width: 95%;
 }
 
 .modal-buttons {

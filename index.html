@@ -35,76 +35,82 @@
     </header>
 
     <!-- add modale -->
-<!-- Modale d'ajout de recette -->
-<div id="addRecipeModal" class="modal hidden">
-    <div class="modal-content">
-        <h2>Ajouter une nouvelle recette</h2>
-        <form id="addRecipeForm">
-            <div class="form-group">
-                <label for="titleInput">Titre</label>
-                <input type="text" id="titleInput" required>
-            </div>
-
-            <div class="form-group">
-                <label for="descriptionInput">Description</label>
-                <textarea id="descriptionInput" placeholder="Une courte description de votre recette..." required></textarea>
-            </div>
-
-            <div class="form-row">
+    <div id="recipeModal" class="modal hidden">
+        <div class="modal-content">
+            <h2 id="modalTitle">Ajouter une nouvelle recette</h2>
+            <form id="recipeForm">
                 <div class="form-group">
-                    <label for="categoryInput">Catégorie</label>
-                    <select id="categoryInput" required>
-                        <option value="">Choisir une catégorie</option>
-                        <option value="entrée">Entrée</option>
-                        <option value="plat principal">Plat principal</option>
-                        <option value="dessert">Dessert</option>
-                    </select>
+                    <label for="titleInput">Titre</label>
+                    <input type="text" id="titleInput" required>
                 </div>
 
                 <div class="form-group">
-                    <label for="difficultyInput">Difficulté</label>
-                    <select id="difficultyInput" required>
-                        <option value="">Choisir une difficulté</option>
-                        <option value="facile">Facile</option>
-                        <option value="moyen">Moyen</option>
-                        <option value="difficile">Difficile</option>
-                    </select>
+                    <label for="descriptionInput">Description</label>
+                    <textarea id="descriptionInput" placeholder="Une courte description de votre recette..."
+                        required></textarea>
                 </div>
-            </div>
 
-            <div class="form-row">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="categoryInput">Catégorie</label>
+                        <select id="categoryInput" required>
+                            <option value="">Choisir une catégorie</option>
+                            <option value="entrée">Entrée</option>
+                            <option value="plat principal">Plat principal</option>
+                            <option value="dessert">Dessert</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="difficultyInput">Difficulté</label>
+                        <select id="difficultyInput" required>
+                            <option value="">Choisir une difficulté</option>
+                            <option value="facile">Facile</option>
+                            <option value="moyen">Moyen</option>
+                            <option value="difficile">Difficile</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prepTimeInput">Temps de préparation (min)</label>
+                        <input type="number" id="prepTimeInput" min="1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cookingTimeInput">Temps de cuisson (min)</label>
+                        <input type="number" id="cookingTimeInput" min="0" required>
+                    </div>
+                </div>
+
                 <div class="form-group">
-                    <label for="prepTimeInput">Temps de préparation (min)</label>
-                    <input type="number" id="prepTimeInput" min="1" required>
+                    <label>Ingrédients</label>
+                    <div class="ingredient-input">
+                        <input type="text" id="ingredientInput" placeholder="Ajouter un ingrédient">
+                        <button type="button" id="addIngredientBtn" class="btn-add-ingredient">Ajouter</button>
+                    </div>
+                    <div id="ingredientsList" class="ingredients-list"></div>
                 </div>
 
                 <div class="form-group">
-                    <label for="cookingTimeInput">Temps de cuisson (min)</label>
-                    <input type="number" id="cookingTimeInput" min="0" required>
+                    <label for="instructionsInput">Instructions</label>
+                    <textarea id="instructionsInput" placeholder="Décrivez la préparation étape par étape..."
+                        required></textarea>
                 </div>
-            </div>
 
-            <div class="form-group">
-                <label>Ingrédients</label>
-                <div class="ingredient-input">
-                    <input type="text" id="ingredientInput" placeholder="Ajouter un ingrédient">
-                    <button type="button" id="addIngredientBtn" class="btn-add-ingredient">Ajouter</button>
+                <div class="form-group">
+                    <label for="imageInput">Image (URL)</label>
+                    <input type="url" id="imageInput" placeholder="https://example.com/image.jpg">
                 </div>
-                <div id="ingredientsList" class="ingredients-list"></div>
-            </div>
 
-            <div class="form-group">
-                <label for="instructionsInput">Instructions</label>
-                <textarea id="instructionsInput" placeholder="Décrivez la préparation étape par étape..." required></textarea>
-            </div>
-
-            <div class="modal-buttons">
-                <button type="submit" class="btn-primary">Ajouter la recette</button>
-                <button type="button" id="cancelBtn" class="btn-secondary">Annuler</button>
-            </div>
-        </form>
+                <div class="modal-buttons">
+                    <button type="submit" class="btn-primary">Ajouter la recette</button>
+                    <button type="button" id="cancelBtn" class="btn-secondary">Annuler</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
     <main>
         <div class="container">
@@ -135,8 +141,8 @@
         </div>
     </footer>
 
-    <script src="/js/main.js"></script>
-    <script src="/js/modale.js"></script>
+    <script src="./js/modale.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
